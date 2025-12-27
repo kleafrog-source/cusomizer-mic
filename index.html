@@ -1,15 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soyuz Microphone Customizer</title>
+    <link rel="stylesheet" href="style.css">
+    <script>window.SOYUZ_CONFIG = {
+  "asset_path": "assets/",
+  "models": [
+    {
+      "id": "017",
+      "name": "Soyuz 017 Series",
+      "dimensions": {
+        "width": "55mm",
+        "height": "226mm"
+      },
+      "images": {
+        "base": "017-base.png",
+        "shadow": "017-shadow.png",
+        "highlight": "017-highlight.png"
+      }
+    },
+    {
+      "id": "023",
+      "name": "Soyuz 023",
+      "dimensions": {
+        "width": "47mm",
+        "height": "194mm"
+      },
+       "images": {
+        "base": "023-base.png",
+        "shadow": "023-shadow.png",
+        "highlight": "023-highlight.png"
+      }
+    }
+  ],
+  "ral_colors": [
+    { "ral": "1000", "hex": "#BEBD7F", "name": "Green beige" },
+    { "ral": "1001", "hex": "#C2B078", "name": "Beige" },
+    { "ral": "9005", "hex": "#0E0E10", "name": "Jet black" }
+  ]
+};</script>
+</head>
+<body>
+    <div class="soyuz-customizer-app">
+        <main class="soyuz-main-container">
+            <!-- Left Side: Microphone Preview -->
+            <section class="soyuz-preview-panel">
+                <div class="soyuz-microphone-preview">
+                    <div class="soyuz-layer soyuz-layer--shadow"></div>
+                    <div class="soyuz-layer soyuz-layer--color-mask" id="soyuz-headgroup-mask"></div>
+                    <div class="soyuz-layer soyuz-layer--color-mask" id="soyuz-body-mask"></div>
+                    <div class="soyuz-layer soyuz-layer--texture"></div>
+                    <div class="soyuz-layer soyuz-layer--highlight"></div>
+                </div>
+                <div class="soyuz-wooden-box-preview">
+                    <img id="soyuz-box-logo" src="" alt="Custom Logo Preview" style="display: none;">
+                </div>
+            </section>
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Create Microphone Customizer UI (Copy)</title>
-    </head>
+            <!-- Right Side: Customization Controls -->
+            <aside class="soyuz-controls-panel">
+                <header class="soyuz-controls-header">
+                    <h1>Soyuz Customizer</h1>
+                    <p>Create your own unique microphone</p>
+                </header>
+                <div class="soyuz-controls-body">
+                    <div class="soyuz-accordion">
+                        <div class="soyuz-accordion-item">
+                            <h3><button class="soyuz-accordion-header">Microphone Model</button></h3>
+                            <div class="soyuz-accordion-content">
+                                <div class="soyuz-toggle-switch">
+                                    <span class="soyuz-toggle-label">017 Series</span>
+                                    <label class="soyuz-switch">
+                                        <input type="checkbox" id="soyuz-model-toggle">
+                                        <span class="soyuz-slider"></span>
+                                    </label>
+                                    <span class="soyuz-toggle-label">023 Model</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="soyuz-accordion-item">
+                            <h3><button class="soyuz-accordion-header">Head Unit Color</button></h3>
+                            <div class="soyuz-accordion-content" data-part="headGroup">
+                                 <div class="soyuz-ral-picker"></div>
+                            </div>
+                        </div>
+                        <div class="soyuz-accordion-item">
+                            <h3><button class="soyuz-accordion-header">Body Color</button></h3>
+                            <div class="soyuz-accordion-content" data-part="body">
+                                <div class="soyuz-ral-picker"></div>
+                            </div>
+                        </div>
+                        <div class="soyuz-accordion-item">
+                            <h3><button class="soyuz-accordion-header">Shockmount</button></h3>
+                            <div class="soyuz-accordion-content" data-part="shockmount">
+                                <div class="soyuz-ral-picker"></div>
+                            </div>
+                        </div>
+                        <div class="soyuz-accordion-item">
+                            <h3><button class="soyuz-accordion-header">Nameplate</button></h3>
+                            <div class="soyuz-accordion-content">
+                                <div class="soyuz-control-group">
+                                    <label>Base Metal</label>
+                                    <div class="soyuz-button-group">
+                                        <button class="soyuz-button active" data-value="gold">Yellow Metal</button>
+                                        <button class="soyuz-button" data-value="silver">Grey Metal</button>
+                                    </div>
+                                </div>
+                                <div class="soyuz-control-group">
+                                    <label>Fill Color</label>
+                                    <div class="soyuz-ral-picker" data-part="shield"></div>
+                                </div>
+                                <div class="soyuz-control-group">
+                                    <label for="soyuz-logo-upload">Custom Logo</label>
+                                    <input type="file" id="soyuz-logo-upload" class="soyuz-file-input" accept="image/png, image/jpeg, image/svg+xml">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="soyuz-controls-footer">
+                   <div class="soyuz-price-display">
+                       <span>Price:</span>
+                       <span class="soyuz-price-value">$0.00</span>
+                   </div>
+                    <button class="soyuz-submit-button">Submit Order</button>
+                </footer>
+            </aside>
+        </main>
+    </div>
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+    <!-- Submission Modal -->
+    <div id="soyuz-submission-modal" class="soyuz-modal">
+        <div class="soyuz-modal-content">
+            <header class="soyuz-modal-header">
+                <h2>Complete Your Order</h2>
+                <button id="soyuz-modal-close" class="soyuz-modal-close-button">&times;</button>
+            </header>
+            <div class="soyuz-modal-body">
+                <form id="soyuz-order-form">
+                    <div class="soyuz-form-group">
+                        <label for="soyuz-user-name">Name</label>
+                        <input type="text" id="soyuz-user-name" required>
+                    </div>
+                    <div class="soyuz-form-group">
+                        <label for="soyuz-user-phone">Phone</label>
+                        <input type="tel" id="soyuz-user-phone" required>
+                    </div>
+                    <div class="soyuz-form-group">
+                        <label for="soyuz-user-email">Email</label>
+                        <input type="email" id="soyuz-user-email" required>
+                    </div>
+                    <button type="submit" class="soyuz-submit-button">Confirm & Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

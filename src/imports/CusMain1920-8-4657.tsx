@@ -1003,7 +1003,7 @@ function CustomizationOption() {
         <div className="absolute left-[20.68px] size-[33.191px] top-[137.3px]" data-name="Shields Separate">
           <div className="absolute flex h-[calc(1px*((var(--transform-inner-width)*0.014256506226956844)+(var(--transform-inner-height)*0.999898374080658)))] items-center justify-center left-1/2 top-[calc(50%-0.032px)] translate-x-[-50%] translate-y-[-50%] w-[calc(1px*((var(--transform-inner-height)*0.014256506226956844)+(var(--transform-inner-width)*0.999898374080658)))]" style={{ "--transform-inner-width": "30", "--transform-inner-height": "31" } as React.CSSProperties}>
             <div className="flex-none rotate-[359.183deg]">
-              <div className="h-[30.702px] relative w-[29.744px]" data-name="ш-TUBE">
+              <div className="h-[30.702px] relative w-[29.744px]" data-name="shield-TUBE">
                 <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img5} />
               </div>
             </div>

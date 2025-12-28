@@ -57,7 +57,7 @@ function Microphone() {
         <div className="absolute left-[56.87px] size-[91.267px] top-[377.53px]" data-name="badge-Shield-Separate">
           <div className="absolute flex h-[calc(1px*((var(--transform-inner-width)*0.014256506226956844)+(var(--transform-inner-height)*0.999898374080658)))] items-center justify-center left-1/2 top-[calc(50%-0.088px)] translate-x-[-50%] translate-y-[-50%] w-[calc(1px*((var(--transform-inner-height)*0.014256506226956844)+(var(--transform-inner-width)*0.999898374080658)))]" style={{ "--transform-inner-width": "82", "--transform-inner-height": "84" } as React.CSSProperties}>
             <div className="flex-none rotate-[359.183deg]">
-              <div className="h-[84.422px] relative w-[81.789px]" data-name="ш-TUBE">
+              <div className="h-[84.422px] relative w-[81.789px]" data-name="shield-TUBE">
                 <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={img4} />
               </div>
             </div>
